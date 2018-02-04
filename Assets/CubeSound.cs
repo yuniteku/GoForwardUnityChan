@@ -19,7 +19,7 @@ public class CubeSound : MonoBehaviour {
 
 
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         AudioSource.PlayClipAtPoint(sound, transform.position);
 
