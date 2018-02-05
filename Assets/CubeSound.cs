@@ -7,6 +7,8 @@ public class CubeSound : MonoBehaviour {
 
     public AudioClip sound;
 
+    int blockSound;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -21,8 +23,15 @@ public class CubeSound : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        AudioSource.PlayClipAtPoint(sound, transform.position);
+        
+        if(collision.gameObject.tag == "groundTag")
+        {
+            AudioSource.PlayClipAtPoint(sound, transform.position);
 
+        }else if (collision.gameObject.tag == "cubeTag")
+        {
+            AudioSource.PlayClipAtPoint(sound, transform.position);
+        }
 
     }
 
